@@ -5,18 +5,6 @@ import { Ornament } from './Ornament'
 export function BismillahIntro() {
   return (
     <section className="relative flex flex-col items-center gap-10 px-6 py-28 text-center sm:py-36">
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 1 }}
-        className="text-3xl text-[var(--color-gold)] sm:text-4xl"
-        dir="rtl"
-        lang="ar"
-      >
-        {weddingConfig.bismillah}
-      </motion.p>
-
       <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
 
       <div className="flex max-w-xl flex-col gap-5">

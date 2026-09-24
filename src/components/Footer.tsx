@@ -22,7 +22,7 @@ export function Footer() {
       </p>
 
       <p className="font-sans text-xs tracking-[0.25em] text-[var(--color-ink)]/50 uppercase">
-        {weddingConfig.hosts.familyName} oilasi
+        {weddingConfig.hosts.groomFamilyName} &amp; {weddingConfig.hosts.brideFamilyName} oilalari
       </p>
 
       <Ornament variant="divider" className="mt-4 h-4 w-40 text-[var(--color-gold)]/50" />

@@ -1,4 +1,4 @@
-# Nuriddin & Nodira — Nikoh taklifnomasi
+# Nuriddin & Mashhura — Nikoh taklifnomasi
 
 Onlayn to'y taklifnomasi sayti. Vite + React + TypeScript + Tailwind CSS, Framer Motion, GSAP ScrollTrigger va Lenis silliq scroll bilan qurilgan.
 

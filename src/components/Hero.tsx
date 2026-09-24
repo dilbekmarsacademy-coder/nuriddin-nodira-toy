@@ -101,7 +101,7 @@ export function Hero() {
   }, [reducedMotion])
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 text-center">
+    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full" />
 
       <motion.div
@@ -156,7 +156,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ opacity: { delay: 2.2, duration: 0.8 }, y: { repeat: Infinity, duration: 1.8, ease: 'easeInOut' } }}
-        className="absolute bottom-8 flex flex-col items-center gap-2 text-[var(--color-gold)]"
+        className="mt-12 flex flex-col items-center gap-2 text-[var(--color-gold)]"
       >
         <span className="font-sans text-[10px] tracking-[0.3em] uppercase">Pastga suring</span>
         <svg width="16" height="24" viewBox="0 0 16 24" fill="none">

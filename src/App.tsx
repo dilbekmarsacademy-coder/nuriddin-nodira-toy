@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { Envelope } from './components/Envelope'
 import { Hero } from './components/Hero'
 import { BismillahIntro } from './components/BismillahIntro'
 import { Countdown } from './components/Countdown'
-import { LoveStory } from './components/LoveStory'
 import { Schedule } from './components/Schedule'
 import { Location } from './components/Location'
 import { Gallery } from './components/Gallery'
@@ -23,13 +23,16 @@ function App() {
       <div className="grain-overlay" />
       <CustomCursor />
 
-      {!isOpened && <Envelope onOpen={() => setIsOpened(true)} />}
+      <AnimatePresence>
+        {!isOpened && <Envelope key="envelope" onOpen={() => setIsOpened(true)} />}
+      </AnimatePresence>
 
-      <main className={isOpened ? 'opacity-100' : 'pointer-events-none opacity-0'}>
+      <main
+        className={`transition-opacity duration-1000 ${isOpened ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+      >
         <Hero />
         <BismillahIntro />
         <Countdown />
-        <LoveStory />
         <Schedule />
         <Location />
         <Gallery />

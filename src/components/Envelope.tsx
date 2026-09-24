@@ -20,12 +20,11 @@ export function Envelope({ onOpen }: EnvelopeProps) {
   }
 
   return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--color-cream)] px-6"
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.8, delay: 1.3 }}
-      >
+    <motion.div
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--color-cream)] px-6"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+    >
         <div className="absolute inset-0 opacity-[0.06]" style={{
           backgroundImage:
             "radial-gradient(circle at 20% 20%, var(--color-gold) 0, transparent 40%), radial-gradient(circle at 80% 80%, var(--color-gold) 0, transparent 40%)",
@@ -47,7 +46,6 @@ export function Envelope({ onOpen }: EnvelopeProps) {
             animate={{
               opacity: 1,
               scale: 1,
-              y: isOpening ? -40 : 0,
             }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="relative h-[220px] w-[300px] sm:h-[260px] sm:w-[360px]"
@@ -57,12 +55,12 @@ export function Envelope({ onOpen }: EnvelopeProps) {
 
             {/* card peeking out */}
             <motion.div
-              className="absolute left-1/2 top-2 h-[150px] w-[260px] -translate-x-1/2 rounded-sm border border-[var(--color-gold)]/40 bg-[var(--color-cream)] shadow-lg sm:w-[300px]"
-              animate={{ y: isOpening ? -120 : 0, opacity: isOpening ? 1 : 1 }}
-              transition={{ duration: 1.1, delay: 0.4, ease: 'easeOut' }}
+              className="absolute left-1/2 top-2 min-h-[140px] w-[260px] -translate-x-1/2 rounded-sm border border-[var(--color-gold)]/40 bg-[var(--color-cream)] py-4 shadow-lg sm:w-[300px]"
+              animate={{ y: isOpening ? -56 : 0, scale: isOpening ? 1.05 : 1 }}
+              transition={{ duration: 0.9, delay: 0.5, ease: 'easeOut' }}
             >
               <div className="flex h-full flex-col items-center justify-center gap-1 px-4 text-center">
-                <span className="font-script text-3xl text-[var(--color-emerald)] sm:text-4xl">
+                <span className="font-script text-2xl text-[var(--color-emerald)] sm:text-4xl">
                   {weddingConfig.groom} &amp; {weddingConfig.bride}
                 </span>
                 <span className="font-serif text-xs tracking-[0.3em] text-[var(--color-gold)] uppercase">
@@ -85,6 +83,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
               style={{
                 clipPath: 'polygon(0 0, 100% 0, 50% 100%)',
                 transformStyle: 'preserve-3d',
+                backfaceVisibility: 'hidden',
               }}
               animate={{ rotateX: isOpening ? 180 : 0 }}
               transition={{ duration: 0.9, ease: 'easeInOut' }}
@@ -105,7 +104,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
                   whileTap={{ scale: 0.92 }}
                   className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-gold-light)] via-[var(--color-gold)] to-[#a3854a] shadow-[0_4px_12px_rgba(0,0,0,0.3)] sm:h-16 sm:w-16"
                 >
-                  <span className="font-script text-xl text-[var(--color-cream)] sm:text-2xl">N&amp;N</span>
+                  <span className="font-script text-xl text-[var(--color-cream)] sm:text-2xl">N&amp;M</span>
                 </motion.button>
               )}
             </AnimatePresence>
@@ -127,7 +126,6 @@ export function Envelope({ onOpen }: EnvelopeProps) {
             </motion.button>
           )}
         </AnimatePresence>
-      </motion.div>
-    </AnimatePresence>
+    </motion.div>
   )
 }

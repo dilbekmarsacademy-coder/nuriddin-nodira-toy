@@ -2,57 +2,35 @@
 
 export const weddingConfig = {
   groom: 'Nuriddin',
-  bride: 'Nodira',
+  bride: 'Mashhura',
 
   // ISO formatda sana, Countdown va kalendar shu yerdan hisoblaydi
-  date: '2026-10-18T18:00:00+05:00',
-  dateLabel: '18 · 10 · 2026',
-  dayOfWeekLabel: 'Yakshanba',
+  date: '2026-10-17T18:00:00+05:00',
+  dateLabel: '17 · 10 · 2026',
+  dayOfWeekLabel: 'Shanba',
   timeLabel: '18:00',
 
   hosts: {
-    familyName: 'Hakimovlar',
+    groomFamilyName: 'Fayziyevlar',
+    brideFamilyName: 'Muhammadovlar',
     invitationText:
-      "Hakimovlar oilasi farzandlari Nuriddin va Nodiraning nikoh to'yiga sizni va oilangizni chin dildan taklif etadi.",
+      "Fayziyevlar va Muhammadovlar oilalari farzandlari Nuriddin va Mashhuraning nikoh to'yiga sizni va oilangizni chin dildan taklif etadi.",
   },
 
   venue: {
-    name: "Yakkasaroy to'yxonasi",
-    address: 'Yakkasaroy mahallasi, Xatirchi tumani, Navoiy viloyati',
-    lat: 40.1027,
-    lng: 65.3672,
-    googleMapsUrl: 'https://www.google.com/maps?q=40.1027,65.3672',
-    yandexNavigatorUrl: 'yandexnavi://build_route_on_map?lat_to=40.1027&lon_to=65.3672',
-    yandexMapsUrl: 'https://yandex.com/maps/?pt=65.3672,40.1027&z=16&l=map',
+    name: "Yangi Saroy to'yxonasi",
+    address: '49V6+32F, Karmana tumani, Navoiy viloyati',
+    lat: 40.142677,
+    lng: 65.360061,
+    googleMapsUrl: 'https://www.google.com/maps?q=40.142677,65.360061',
+    yandexNavigatorUrl: 'yandexnavi://build_route_on_map?lat_to=40.142677&lon_to=65.360061',
+    yandexMapsUrl: 'https://yandex.com/maps/?pt=65.360061,40.142677&z=16&l=map',
   },
-
-  bismillah: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
 
   invitationIntro: [
     "Ikki yurak bir umrga birlashadigan kun yaqinlashmoqda.",
     "Quvonchimizni siz aziz mehmonlar bilan birga nishonlashni orzu qilamiz.",
     "Yorug' va baxtli oila qurishimizga guvoh bo'lishingizni so'raymiz.",
-  ],
-
-  loveStory: [
-    {
-      year: '2022',
-      title: 'Tanishuv',
-      description: "Ikki yurak birinchi marta bir-biriga ko'zga tashlandi va shu kundan boshlab hayot boshqacha ranglarga bo'yaldi.",
-      image: '/images/story-1.jpg',
-    },
-    {
-      year: '2024',
-      title: 'Unashtiruv',
-      description: "Oilalar duosi bilan qalblar rasman bir-biriga va'da berdi.",
-      image: '/images/story-2.jpg',
-    },
-    {
-      year: '2026',
-      title: "To'y",
-      description: "Va nihoyat, ikki yurak bir umrga birlashadigan kun keldi.",
-      image: '/images/story-3.jpg',
-    },
   ],
 
   schedule: [
@@ -68,9 +46,6 @@ export const weddingConfig = {
     '/images/gallery-1.jpg',
     '/images/gallery-2.jpg',
     '/images/gallery-3.jpg',
-    '/images/gallery-4.jpg',
-    '/images/gallery-5.jpg',
-    '/images/gallery-6.jpg',
   ],
 
   music: {
@@ -82,10 +57,10 @@ export const weddingConfig = {
   },
 
   seo: {
-    title: 'Nuriddin & Nodira — Nikoh taklifnomasi',
-    description: "18-oktabr, 2026. Nuriddin va Nodiraning to'yiga sizni taklif qilamiz.",
+    title: 'Nuriddin & Mashhura — Nikoh taklifnomasi',
+    description: "17-oktabr, 2026. Nuriddin va Mashhuraning to'yiga sizni taklif qilamiz.",
     ogImage: '/og-image.jpg',
-    url: 'https://nuriddin-nodira.vercel.app',
+    url: 'https://nuriddin-mashhura-toy.vercel.app',
   },
 
   footer: {
