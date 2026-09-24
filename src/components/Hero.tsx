@@ -120,7 +120,7 @@ export function Hero() {
         Nikoh to'yi
       </motion.p>
 
-      <h1 className="font-script text-6xl leading-tight text-[var(--color-emerald)] sm:text-8xl md:text-9xl">
+      <h1 className="font-script text-5xl leading-tight text-[var(--color-emerald)] break-words sm:text-7xl md:text-8xl">
         <AnimatedName text={weddingConfig.groom} delayOffset={0} />
       </h1>
 
@@ -133,7 +133,7 @@ export function Hero() {
         &amp;
       </motion.div>
 
-      <h1 className="font-script text-6xl leading-tight text-[var(--color-emerald)] sm:text-8xl md:text-9xl">
+      <h1 className="font-script text-5xl leading-tight text-[var(--color-emerald)] break-words sm:text-7xl md:text-8xl">
         <AnimatedName text={weddingConfig.bride} delayOffset={weddingConfig.groom.length + 4} />
       </h1>
 

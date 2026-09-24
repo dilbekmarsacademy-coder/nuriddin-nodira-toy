@@ -1,8 +1,8 @@
 // Barcha to'y ma'lumotlari shu yerda. O'zgartirish kerak bo'lsa faqat shu faylni tahrirlang.
 
 export const weddingConfig = {
-  groom: 'Nuriddin',
-  bride: 'Mashhura',
+  groom: 'Nuriddinjon',
+  bride: 'Mashhuraxon',
 
   // ISO formatda sana, Countdown va kalendar shu yerdan hisoblaydi
   date: '2026-10-17T18:00:00+05:00',
@@ -14,7 +14,7 @@ export const weddingConfig = {
     groomFamilyName: 'Fayziyevlar',
     brideFamilyName: 'Muhammadovlar',
     invitationText:
-      "Fayziyevlar va Muhammadovlar oilalari farzandlari Nuriddin va Mashhuraning nikoh to'yiga sizni va oilangizni chin dildan taklif etadi.",
+      "Fayziyevlar va Muhammadovlar oilalari farzandlari Nuriddinjon va Mashhuraxonning nikoh to'yiga sizni va oilangizni chin dildan taklif etadi.",
   },
 
   venue: {
@@ -57,8 +57,8 @@ export const weddingConfig = {
   },
 
   seo: {
-    title: 'Nuriddin & Mashhura — Nikoh taklifnomasi',
-    description: "17-oktabr, 2026. Nuriddin va Mashhuraning to'yiga sizni taklif qilamiz.",
+    title: 'Nuriddinjon & Mashhuraxon — Nikoh taklifnomasi',
+    description: "17-oktabr, 2026. Nuriddinjon va Mashhuraxonning to'yiga sizni taklif qilamiz.",
     ogImage: '/og-image.jpg',
     url: 'https://nuriddin-mashhura-toy.vercel.app',
   },
