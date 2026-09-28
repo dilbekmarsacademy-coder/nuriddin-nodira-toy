@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider } from './Flowers'
 
 export function BismillahIntro() {
   return (
     <section className="relative flex flex-col items-center gap-10 px-6 py-28 text-center sm:py-36">
-      <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
+      <FloralDivider className="h-8 w-44" />
 
       <div className="flex max-w-xl flex-col gap-5">
         {weddingConfig.invitationIntro.map((line, i) => (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { weddingConfig } from '../config'
+import { FloralCorner, FloralFrame } from './Flowers'
 
 type EnvelopeProps = {
   onOpen: () => void
@@ -25,16 +26,17 @@ export function Envelope({ onOpen }: EnvelopeProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, delay: 0.6 }}
     >
-        <div className="absolute inset-0 opacity-[0.06]" style={{
+        <div className="absolute inset-0 opacity-60" style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, var(--color-gold) 0, transparent 40%), radial-gradient(circle at 80% 80%, var(--color-gold) 0, transparent 40%)",
+            "radial-gradient(circle at 15% 15%, var(--color-blush) 0, transparent 45%), radial-gradient(circle at 85% 85%, var(--color-blush) 0, transparent 45%)",
         }} />
+        <FloralFrame className="w-36 sm:w-52 md:w-64" />
 
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="mb-8 font-serif text-sm tracking-[0.35em] text-[var(--color-gold)] uppercase"
+          className="mb-8 font-serif text-sm tracking-[0.35em] text-[var(--color-rose)] uppercase"
         >
           Taklifnoma
         </motion.p>
@@ -51,7 +53,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
             className="relative h-[220px] w-[300px] sm:h-[260px] sm:w-[360px]"
           >
             {/* back panel */}
-            <div className="absolute inset-0 rounded-sm border border-[var(--color-gold)]/50 bg-gradient-to-b from-[#fffdf9] to-[#f3ead8] shadow-[0_20px_60px_-15px_rgba(43,36,32,0.35)]" />
+            <div className="absolute inset-0 rounded-sm border border-[var(--color-gold)]/50 bg-gradient-to-b from-[#fffdf9] to-[#f8e6e2] shadow-[0_20px_60px_-15px_rgba(43,36,32,0.35)]" />
 
             {/* card peeking out */}
             <motion.div
@@ -60,7 +62,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
               transition={{ duration: 0.9, delay: 0.5, ease: 'easeOut' }}
             >
               <div className="flex h-full flex-col items-center justify-center gap-1 px-4 text-center">
-                <span className="font-script text-2xl text-[var(--color-emerald)] sm:text-4xl">
+                <span className="font-script text-2xl text-[var(--color-wine)] sm:text-4xl">
                   {weddingConfig.groom} &amp; {weddingConfig.bride}
                 </span>
                 <span className="font-serif text-xs tracking-[0.3em] text-[var(--color-gold)] uppercase">
@@ -71,15 +73,19 @@ export function Envelope({ onOpen }: EnvelopeProps) {
 
             {/* bottom triangle flap (stays static, behind card) */}
             <div
-              className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-[#efe4cc] to-transparent"
+              className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-[#f3dcd6] to-transparent"
               style={{
                 clipPath: 'polygon(0 100%, 100% 100%, 50% 40%)',
               }}
             />
 
+            {/* envelope bouquets */}
+            <FloralCorner className="pointer-events-none absolute -bottom-6 -left-8 w-24 -scale-y-100 sm:w-28" />
+            <FloralCorner className="pointer-events-none absolute -right-8 -bottom-6 w-24 -scale-100 sm:w-28" />
+
             {/* top flap that opens */}
             <motion.div
-              className="absolute inset-x-0 top-0 h-1/2 origin-top bg-gradient-to-b from-[#f6ecd8] to-[#ecdfc3]"
+              className="absolute inset-x-0 top-0 h-1/2 origin-top bg-gradient-to-b from-[#fbeeea] to-[#f2d9d3]"
               style={{
                 clipPath: 'polygon(0 0, 100% 0, 50% 100%)',
                 transformStyle: 'preserve-3d',
@@ -102,7 +108,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
                   transition={{ duration: 0.5 }}
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.92 }}
-                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-gold-light)] via-[var(--color-gold)] to-[#a3854a] shadow-[0_4px_12px_rgba(0,0,0,0.3)] sm:h-16 sm:w-16"
+                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-rose)] via-[#b85a6a] to-[var(--color-wine)] ring-2 ring-[var(--color-gold-light)]/70 shadow-[0_4px_14px_rgba(122,59,74,0.45)] sm:h-16 sm:w-16"
                 >
                   <span className="font-script text-xl text-[var(--color-cream)] sm:text-2xl">N&amp;M</span>
                 </motion.button>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider } from './Flowers'
 
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -9,8 +9,8 @@ export function Gallery() {
   return (
     <section className="relative px-6 py-24 sm:py-32">
       <div className="mb-14 flex flex-col items-center gap-4 text-center">
-        <h2 className="font-serif text-3xl text-[var(--color-emerald)] sm:text-4xl">Galereya</h2>
-        <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
+        <h2 className="font-serif text-3xl text-[var(--color-wine)] sm:text-4xl">Galereya</h2>
+        <FloralDivider className="h-8 w-44" />
       </div>
 
       <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">

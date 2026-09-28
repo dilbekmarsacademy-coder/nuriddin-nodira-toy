@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider } from './Flowers'
 
 const icons: Record<string, ReactElement> = {
   welcome: (
@@ -48,8 +48,8 @@ export function Schedule() {
   return (
     <section className="relative px-6 py-24 sm:py-32">
       <div className="mb-14 flex flex-col items-center gap-4 text-center">
-        <h2 className="font-serif text-3xl text-[var(--color-emerald)] sm:text-4xl">To'y dasturi</h2>
-        <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
+        <h2 className="font-serif text-3xl text-[var(--color-wine)] sm:text-4xl">To'y dasturi</h2>
+        <FloralDivider className="h-8 w-44" />
       </div>
 
       <div className="mx-auto flex max-w-md flex-col gap-2">
@@ -68,7 +68,7 @@ export function Schedule() {
               </svg>
             </div>
             <div className="flex flex-1 flex-col">
-              <span className="font-serif text-lg text-[var(--color-emerald)]">{item.title}</span>
+              <span className="font-serif text-lg text-[var(--color-wine)]">{item.title}</span>
             </div>
             <span className="font-sans text-sm tracking-wide text-[var(--color-gold)]">{item.time}</span>
           </motion.div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider } from './Flowers'
 
 type Answer = 'yes' | 'maybe' | 'no'
 
@@ -13,7 +13,7 @@ const options: { value: Answer; label: string }[] = [
 
 function ConfettiBurst() {
   const pieces = Array.from({ length: 28 }, (_, i) => i)
-  const colors = ['#C9A961', '#E4D4A8', '#1F3D34', '#FBF7F0']
+  const colors = ['#C9A961', '#F2C9CC', '#D98A96', '#7A3B4A', '#FDF6F3']
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -72,8 +72,8 @@ export function RSVP() {
   return (
     <section className="relative px-6 py-24 sm:py-32">
       <div className="mb-14 flex flex-col items-center gap-4 text-center">
-        <h2 className="font-serif text-3xl text-[var(--color-emerald)] sm:text-4xl">Ishtirokingizni tasdiqlang</h2>
-        <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
+        <h2 className="font-serif text-3xl text-[var(--color-wine)] sm:text-4xl">Ishtirokingizni tasdiqlang</h2>
+        <FloralDivider className="h-8 w-44" />
       </div>
 
       <div className="relative mx-auto max-w-md">
@@ -139,7 +139,7 @@ export function RSVP() {
                       onClick={() => setAnswer(opt.value)}
                       className={`rounded-lg border px-4 py-3 text-left font-sans text-sm transition ${
                         answer === opt.value
-                          ? 'border-[var(--color-gold)] bg-[var(--color-gold)]/15 text-[var(--color-emerald)]'
+                          ? 'border-[var(--color-gold)] bg-[var(--color-gold)]/15 text-[var(--color-wine)]'
                           : 'border-[var(--color-gold)]/25 text-[var(--color-ink)]/70 hover:border-[var(--color-gold)]/60'
                       }`}
                     >
@@ -165,7 +165,7 @@ export function RSVP() {
               <button
                 type="submit"
                 disabled={status === 'sending' || !answer}
-                className="mt-2 rounded-full bg-[var(--color-gold)] px-6 py-3 font-sans text-sm tracking-[0.15em] text-white uppercase transition hover:bg-[var(--color-emerald)] disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-2 rounded-full bg-[var(--color-gold)] px-6 py-3 font-sans text-sm tracking-[0.15em] text-white uppercase transition hover:bg-[var(--color-wine)] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {status === 'sending' ? 'Yuborilmoqda...' : 'Yuborish'}
               </button>

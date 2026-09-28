@@ -44,7 +44,7 @@ export function MusicPlayer({ autoPlay }: MusicPlayerProps) {
         <motion.div
           animate={{ rotate: isPlaying ? 360 : 0 }}
           transition={{ repeat: isPlaying ? Infinity : 0, duration: 4, ease: 'linear' }}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-gold)] to-[var(--color-emerald)] sm:h-9 sm:w-9"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-gold)] to-[var(--color-wine)] sm:h-9 sm:w-9"
         >
           <div className="h-2 w-2 rounded-full bg-[var(--color-cream)]" />
         </motion.div>

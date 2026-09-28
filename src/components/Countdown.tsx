@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider } from './Flowers'
 
 function getTimeLeft() {
   const target = new Date(weddingConfig.date).getTime()
@@ -28,7 +28,7 @@ function FlipUnit({ value, label }: { value: number; label: string }) {
             animate={{ y: '0%', opacity: 1 }}
             exit={{ y: '100%', opacity: 0 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="absolute inset-0 flex items-center justify-center font-serif text-2xl font-semibold text-[var(--color-emerald)] sm:text-4xl"
+            className="absolute inset-0 flex items-center justify-center font-serif text-2xl font-semibold text-[var(--color-wine)] sm:text-4xl"
           >
             {padded}
           </motion.span>
@@ -62,11 +62,11 @@ export function Countdown() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.8 }}
-        className="font-serif text-3xl text-[var(--color-emerald)] sm:text-4xl"
+        className="font-serif text-3xl text-[var(--color-wine)] sm:text-4xl"
       >
         To'yimizgacha
       </motion.h2>
-      <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
+      <FloralDivider className="h-8 w-44" />
 
       <div className="flex gap-3 sm:gap-6">
         <FlipUnit value={time.days} label="Kun" />

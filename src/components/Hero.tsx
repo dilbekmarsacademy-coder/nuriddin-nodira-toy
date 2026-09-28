@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider, FloralFrame } from './Flowers'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 
 const letterVariants = {
@@ -46,13 +46,19 @@ export function Hero() {
     let width = (canvas.width = canvas.offsetWidth)
     let height = (canvas.height = canvas.offsetHeight)
 
-    const particles = Array.from({ length: 36 }, () => ({
+    // Yog'ayotgan atirgul gulbarglari
+    const petalColors = ['242, 201, 204', '217, 138, 150', '247, 220, 221', '201, 169, 97']
+    const particles = Array.from({ length: 28 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 2 + 0.5,
-      speed: Math.random() * 0.4 + 0.15,
+      r: Math.random() * 4 + 4,
+      speed: Math.random() * 0.5 + 0.3,
       drift: Math.random() * 0.5 - 0.25,
-      opacity: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.4 + 0.45,
+      angle: Math.random() * Math.PI * 2,
+      spin: (Math.random() - 0.5) * 0.03,
+      sway: Math.random() * Math.PI * 2,
+      color: petalColors[Math.floor(Math.random() * petalColors.length)],
     }))
 
     let mouseX = 0
@@ -73,18 +79,26 @@ export function Hero() {
       ctx.clearRect(0, 0, width, height)
       for (const p of particles) {
         p.y += p.speed
-        p.x += p.drift + mouseX * 0.15
-        if (p.y > height) {
-          p.y = -5
+        p.sway += 0.02
+        p.angle += p.spin
+        p.x += p.drift + Math.sin(p.sway) * 0.4 + mouseX * 0.15
+        if (p.y > height + 10) {
+          p.y = -10
           p.x = Math.random() * width
         }
         if (p.x > width) p.x = 0
         if (p.x < 0) p.x = width
 
+        ctx.save()
+        ctx.translate(p.x, p.y)
+        ctx.rotate(p.angle)
         ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(201, 169, 97, ${p.opacity})`
+        ctx.moveTo(0, -p.r)
+        ctx.bezierCurveTo(p.r * 0.9, -p.r * 0.6, p.r * 0.7, p.r * 0.7, 0, p.r)
+        ctx.bezierCurveTo(-p.r * 0.7, p.r * 0.7, -p.r * 0.9, -p.r * 0.6, 0, -p.r)
+        ctx.fillStyle = `rgba(${p.color}, ${p.opacity})`
         ctx.fill()
+        ctx.restore()
       }
       frame = requestAnimationFrame(draw)
     }
@@ -102,6 +116,9 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.6 }}>
+        <FloralFrame />
+      </motion.div>
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full" />
 
       <motion.div
@@ -120,7 +137,7 @@ export function Hero() {
         Nikoh to'yi
       </motion.p>
 
-      <h1 className="font-script text-5xl leading-tight text-[var(--color-emerald)] break-words sm:text-7xl md:text-8xl">
+      <h1 className="font-script text-5xl leading-tight text-[var(--color-wine)] break-words sm:text-7xl md:text-8xl">
         <AnimatedName text={weddingConfig.groom} delayOffset={0} />
       </h1>
 
@@ -128,12 +145,12 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.9, duration: 0.6 }}
-        className="my-2 font-script text-4xl text-[var(--color-gold)] sm:text-6xl"
+        className="my-2 font-script text-4xl text-[var(--color-rose)] sm:text-6xl"
       >
         &amp;
       </motion.div>
 
-      <h1 className="font-script text-5xl leading-tight text-[var(--color-emerald)] break-words sm:text-7xl md:text-8xl">
+      <h1 className="font-script text-5xl leading-tight text-[var(--color-wine)] break-words sm:text-7xl md:text-8xl">
         <AnimatedName text={weddingConfig.bride} delayOffset={weddingConfig.groom.length + 4} />
       </h1>
 
@@ -143,7 +160,7 @@ export function Hero() {
         transition={{ delay: 1.6, duration: 0.8 }}
         className="mt-8 flex flex-col items-center gap-4"
       >
-        <Ornament variant="divider" className="h-4 w-40 text-[var(--color-gold)] sm:w-56" />
+        <FloralDivider className="h-8 w-48 sm:h-10 sm:w-64" />
         <p className="font-serif text-2xl tracking-[0.15em] text-[var(--color-ink)] sm:text-3xl">
           {weddingConfig.dateLabel}
         </p>

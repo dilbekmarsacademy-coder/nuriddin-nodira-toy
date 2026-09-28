@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { weddingConfig } from '../config'
-import { Ornament } from './Ornament'
+import { FloralDivider } from './Flowers'
 
 export function Location() {
   const { venue } = weddingConfig
@@ -9,8 +9,8 @@ export function Location() {
   return (
     <section className="relative px-6 py-24 sm:py-32">
       <div className="mb-14 flex flex-col items-center gap-4 text-center">
-        <h2 className="font-serif text-3xl text-[var(--color-emerald)] sm:text-4xl">Manzil</h2>
-        <Ornament variant="divider" className="h-4 w-32 text-[var(--color-gold)]" />
+        <h2 className="font-serif text-3xl text-[var(--color-wine)] sm:text-4xl">Manzil</h2>
+        <FloralDivider className="h-8 w-44" />
       </div>
 
       <motion.div
@@ -39,7 +39,7 @@ export function Location() {
             href={venue.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border border-[var(--color-gold)] px-6 py-3 font-sans text-xs tracking-wide text-[var(--color-emerald)] uppercase transition hover:bg-[var(--color-gold)] hover:text-white"
+            className="flex items-center gap-2 rounded-full border border-[var(--color-gold)] px-6 py-3 font-sans text-xs tracking-wide text-[var(--color-wine)] uppercase transition hover:bg-[var(--color-gold)] hover:text-white"
           >
             Google Maps
           </a>
@@ -47,7 +47,7 @@ export function Location() {
             href={venue.yandexNavigatorUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border border-[var(--color-gold)] px-6 py-3 font-sans text-xs tracking-wide text-[var(--color-emerald)] uppercase transition hover:bg-[var(--color-gold)] hover:text-white"
+            className="flex items-center gap-2 rounded-full border border-[var(--color-gold)] px-6 py-3 font-sans text-xs tracking-wide text-[var(--color-wine)] uppercase transition hover:bg-[var(--color-gold)] hover:text-white"
           >
             Yandex Navigator
           </a>
