@@ -52,10 +52,6 @@ export const weddingConfig = {
     src: '/music.mp3',
   },
 
-  rsvp: {
-    endpoint: '/api/rsvp',
-  },
-
   seo: {
     title: 'Nuriddinjon & Mashhuraxon — Nikoh taklifnomasi',
     description: "17-oktabr, 2026. Nuriddinjon va Mashhuraxonning to'yiga sizni taklif qilamiz.",

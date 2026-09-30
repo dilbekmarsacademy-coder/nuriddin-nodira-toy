@@ -22,25 +22,6 @@ npm run dev
 
 Brauzerda `http://localhost:5173` ochiladi.
 
-## RSVP → Telegram integratsiyasi
-
-RSVP formasi `api/rsvp.ts` serverless funksiyasi orqali Telegram Bot API'ga xabar yuboradi (token frontendda ochiq qolmaydi).
-
-1. [@BotFather](https://t.me/BotFather) orqali bot yarating va tokenni oling.
-2. O'zingizning `chat_id`'ingizni bilib oling (masalan, botga `/start` yozing, keyin `https://api.telegram.org/bot<TOKEN>/getUpdates` orqali `chat.id`ni ko'ring).
-3. `.env.example` faylini `.env` deb nusxalab, qiymatlarni kiriting:
-
-```bash
-cp .env.example .env
-```
-
-```
-BOT_TOKEN=123456:ABC-your-bot-token
-CHAT_ID=your_chat_id
-```
-
-4. Vercel'ga deploy qilishda shu ikkala o'zgaruvchini Project Settings → Environment Variables bo'limiga qo'shing (yoki `vercel env add`).
-
 ## Deploy qilish (Vercel)
 
 ```bash
@@ -49,7 +30,7 @@ vercel
 vercel --prod
 ```
 
-Yoki loyihani GitHub'ga push qilib, Vercel dashboard orqali import qiling — `BOT_TOKEN` va `CHAT_ID` environment variable'larini qo'shishni unutmang.
+Yoki loyihani GitHub'ga push qilib, Vercel dashboard orqali import qiling.
 
 ## Texnologiyalar
 
@@ -58,7 +39,6 @@ Yoki loyihani GitHub'ga push qilib, Vercel dashboard orqali import qiling — `B
 - Framer Motion — animatsiyalar
 - GSAP + ScrollTrigger — scroll effektlari (Sevgi hikoyasi chizig'i)
 - Lenis — silliq scroll
-- Vercel serverless function — Telegram Bot API integratsiyasi
 
 ## Komponentlar tuzilishi
 
@@ -75,7 +55,6 @@ src/
     Schedule.tsx        # To'y dasturi
     Location.tsx        # Xarita + yo'nalish tugmalari
     Gallery.tsx          # Masonry + lightbox
-    RSVP.tsx              # Forma + Telegram integratsiyasi
     MusicPlayer.tsx
     Footer.tsx
     CustomCursor.tsx
@@ -83,8 +62,6 @@ src/
   hooks/
     useLenis.ts
     useReducedMotion.ts
-api/
-  rsvp.ts             # Vercel serverless function (Telegram)
 ```
 
 ## Performance eslatmalari

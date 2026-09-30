@@ -7,7 +7,6 @@ import { Countdown } from './components/Countdown'
 import { Schedule } from './components/Schedule'
 import { Location } from './components/Location'
 import { Gallery } from './components/Gallery'
-import { RSVP } from './components/RSVP'
 import { Footer } from './components/Footer'
 import { MusicPlayer } from './components/MusicPlayer'
 import { CustomCursor } from './components/CustomCursor'
@@ -36,7 +35,6 @@ function App() {
         <Schedule />
         <Location />
         <Gallery />
-        <RSVP />
         <Footer />
       </main>
 
